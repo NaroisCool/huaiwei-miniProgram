@@ -1,0 +1,107 @@
+/* pages/cat/cat.wxss */
+/*新增样式  */
+
+.goods-list {
+    overflow-x: hidden;
+}
+
+.goods-list {
+    margin-left: -5rpx;
+    margin-right: -5rpx;
+    flex-wrap: wrap;
+}
+
+.goods-list .flex-grow-0 {
+    width: 33.333333%;
+    padding-left: 5rpx;
+    padding-right: 5rpx;
+}
+
+.goods-list {
+    padding-left: 5rpx;
+    padding-right: 5rpx;
+    flex-wrap: wrap;
+    padding-top: 10rpx;
+}
+
+.goods-list .goods-item {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.goods-list .goods-item image {
+    width: 100%;
+    height: 242rpx;
+    /* height: calc(width); */
+    display: block;
+}
+
+.goods-list .goods-item .goods-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    display: block;
+    padding: 10rpx 5rpx 5rpx 5rpx;
+}
+.title-bar {
+    position: relative;
+    height: 100rpx;
+}
+
+.title-bar image {
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.title-bar .title {
+    margin: 0 40rpx;
+}
+
+.title-bar .title-line {
+    display: inline-block;
+    height: 2rpx;
+    width: 30rpx;
+    background: #bbb;
+}
+
+.title-bar .title image {
+    margin-right: 24rpx;
+}
+
+.title-bar navigator {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 20rpx;
+}
+
+
+.cats{
+  height: 100%;
+  background-color: white;
+  position:fixed;
+  padding-bottom:100%;
+  padding: 0;
+  display:flex;  
+  flex-direction: column;
+  border-right:1px solid gainsboro;
+  width: 24%;
+}
+.cat{
+  margin: 30rpx 28rpx;
+}
+.items{
+  height: 100%;
+  width: 76%;
+  margin-left: 180rpx;
+  overflow-y: auto;  
+}
+.blank{
+  height: 1000rpx;
+  background-color: white;
+}
+/*end  */

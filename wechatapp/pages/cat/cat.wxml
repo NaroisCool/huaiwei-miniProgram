@@ -1,0 +1,47 @@
+<!--pages/cat/cat.wxml-->
+<include src="/commons/navbar/navbar"/>
+<view class="after-navber">
+    <view class="flex-y-center flex-x-center"
+          style="height: 100rpx;border-bottom: 1rpx solid #e3e3e3;border-top: 1rpx solid #e3e3e3;position: fixed;top: 0;width: 100%;z-index: 999;background: #EFEFF4">
+        <navigator url="/pages/search/search" class="flex-y-center flex-x-center"
+                   style="width: 700rpx;height: 60rpx;background: #fff;border: 1rpx solid #e3e3e3; border-radius: 10rpx;text-align: center;font-size: 9pt;color: #b2b2b2">
+            <image src="/images/icon-search.png" style="width:24rpx;height: 24rpx;margin-right:10rpx "></image>
+            <text>搜索</text>
+        </navigator>
+    </view>   
+</view>
+<view class='cats' >               
+        <view class='cat' bindtap='jumpTo' data-opt='index-{{lists.id}}' wx:for="{{cat_list}}" wx:for-index="lists_index" wx:for-item="lists">{{lists.name}}</view>                        
+</view>
+
+         
+      <scroll-view enable-back-to-top="true" scroll-top='0' scroll-y="true" scroll-into-view="{{toView}}"  scroll-with-animation="true" class='items '>
+            <view wx:for="{{cat_list}}" wx:for-index="cat_index" wx:for-item="cat" data-rol='index-{{cat.id}}' >
+                <view wx:if="{{cat.goods_list.length>0}}" style="background: #fff;margin-bottom: 10rpx;width:100%;overflow-x: hidden;">
+                    <view class="title-bar flex-y-center flex-x-center">
+                        <view class="title-line"></view>
+                        <view class="title flex-y-center">
+                            <image src="{{cat.pic_url}}" mode="aspectFill"></image>
+                            <text id='index-{{cat.id}}'>{{cat.name}}</text>
+                        </view>
+                        <view class="title-line"></view>                                            
+                    </view>
+            
+                    <view class="goods-list flex-row goods-list-cols-{{cat_goods_cols}}">
+                        <view class="flex-grow-0" wx:for="{{cat.goods_list}}" wx:for-index="goods_index" wx:for-item="goods">
+                            <navigator class="goods-item" url="/pages/goods/goods?id={{goods.id}}">
+                                <image src="{{goods.pic_url}}" style=' width: 120rpx;height: 90rpx;margin:0 20rpx;'></image>  
+                                <text class="text-more-2 {{cat_goods_cols == 3?'fs-sm':''}}" style='padding:0 20rpx;height:2.8em;line-height:1.4;'>{{goods.name}} 
+                                </text>
+                               
+                                
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+                
+            </view>  
+            <view class='blank'></view>           
+        </scroll-view>
+       
+
